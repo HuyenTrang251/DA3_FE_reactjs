@@ -1,0 +1,40 @@
+.headercss {
+    background-color: #3e005d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #3e005d;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+}
+.navbar-nav .nav-link {
+    color: white !important;
+}
+.navbar-nav .nav-link.active {
+    background-color: #7a1fa2;
+    border-radius: 5px;
+}
+.header-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.header-content .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}

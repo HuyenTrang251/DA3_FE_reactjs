@@ -1,0 +1,21 @@
+.banner-ne {
+    .banner-left,
+    .banner-right-top,
+    .banner-right-bottom {
+        position: relative;
+        overflow: hidden;
+        &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        transition: background 0.3s ease;
+        }
+        &:hover::after {
+        background: rgba(255, 255, 255, 0.4);
+        }
+    }
+}
