@@ -3,6 +3,7 @@ import DichVuGiaSu from "../pages/GiaSu";
 import Error404 from "../pages/Error404";
 import TrangChu from "../pages/TrangChu";
 import PhuHuynh from "../pages/PhuHuynh";
+import DanhSachGiaSu from "../pages/DanhSachGiaSu";
 
 export const routes = [
     // user
@@ -18,7 +19,11 @@ export const routes = [
             path: "phuHuynh",
             element: <PhuHuynh />,
         },
-        
+        {
+          
+          path: "tim-gia-su",
+          element: <DanhSachGiaSu />,
+        }
       ],
     },
     // error

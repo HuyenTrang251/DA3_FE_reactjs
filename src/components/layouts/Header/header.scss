@@ -1,10 +1,10 @@
 .headercss {
-    background-color: #3e005d;
-    color: white;
+    background-color:white;
+    color: black;
     font-family: Arial, sans-serif;
 }
 .navbar {
-    background-color: #3e005d;
+    background-color: #f1f8fb;
 }
 .navbar-brand {
     display: flex;
@@ -13,28 +13,14 @@
 .navbar-brand img {
     height: 40px;
     margin-right: 10px;
+    border-radius: 15px;
 }
 .navbar-nav .nav-link {
-    color: white !important;
+    color: #0c024c !important;
+    font-weight: 550;
+    font-size: 17px;
 }
 .navbar-nav .nav-link.active {
-    background-color: #7a1fa2;
+    background-color: #fec52e;
     border-radius: 5px;
-}
-.header-content {
-    text-align: center;
-    padding: 100px 20px;
-}
-.header-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-.header-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-.header-content .btn {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
 }

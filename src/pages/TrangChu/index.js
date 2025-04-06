@@ -1,23 +1,120 @@
 import { Link } from "react-router-dom"
+import { Row, Col, Button } from 'react-bootstrap';
+import "../TrangChu/trangChu.scss"
+import SlideShowHome from "../../components/SlideShowHome";
+import CardTutor from "../../components/CardTutor";
+import CommentTutor from "../../components/CommentTutor";
+import SignUp from "../../components/SignUp";
 
 function TrangChu() {
     return(
         <>
             <div className="header-content">
-                <h1>Gia Sư Online – Dạy Kèm Trực Tuyến</h1>
-                <p>
-                    Giasuonline.vn – Nền tảng kết nối gia sư online và tìm kiếm lớp dạy kèm
-                    trực tuyến dành cho phụ huynh và học sinh.
+                <h1 style={{color: 'white', fontSize: '40px'}}>Gia Sư Online – Dạy Kèm Trực Tuyến</h1>
+                <p style={{color: 'white', marginLeft: '120px', fontSize: '25px'}}>
+                    Gia sư HTrang - Nơi gửi gắm niềm tin
                 </p>
-                <Link className="btn btn-danger" to="/tim-gia-su-theo-lop">
-                    Tìm Gia Sư Theo Lớp
+                <p style={{color: 'white', marginLeft: '170px', fontSize: '20px'}}>
+                    Uy tín - Chất lượng - Chuyên nghiệp
+                </p>
+                <Link className="btn text-white" style={{marginLeft: '100px',fontWeight: '500', padding: '10px 15px', backgroundColor: '#ff8B00'}} to="/tim-gia-su-theo-lop">
+                    Đăng ký học thử miễn phí
                 </Link>
-                <Link className="btn btn-danger" to="/dang-ky-lam-gia-su">
+                <Link className="btn text-white" style={{marginLeft: '30px', fontWeight: '500', padding: '10px 15px', backgroundColor: '#ff8B00'}} to="/dang-ky-lam-gia-su">
                     Đăng Ký Làm Gia Sư
                 </Link>
             </div>
+            <h3 className="text-center fs-2 text-dark my-5">Điểm khác biệt của gia sư HTrang</h3>
+            <div className="mainContent1">
+                <Row className="text-center py-3 border">
+                    <Col md={7}>
+                        <Row className="text-left">
+                            <Col md={6} className="p-3">
+                            <h5 className="text-success">CHẤT LƯỢNG</h5>
+                            <p>Gia sư giỏi, kinh nghiệm từ các trường TOP đầu. HTcon cung cấp thông tin hồ sơ rõ ràng, minh bạch.</p>
+                            </Col>
+                            <Col md={6} className="p-3 ps-5">
+                            <h5 className="text-danger">NHANH CHÓNG</h5>
+                            <p>Chỉ 0-2 ngày để tìm gia sư giỏi phù hợp với đúng yêu cầu của gia đình.</p>
+                            </Col>
+                        </Row>
+                        <Row className="text-left">
+                            <Col md={6} className="p-3">
+                            <h5 className="text-info">MIỄN PHÍ</h5>
+                            <p>Miễn phí tư vấn, tìm và đối gia sư theo yêu cầu của Phụ huynh / Học sinh.</p>
+                            </Col>
+                            <Col md={6} className="p-3 ps-5">
+                            <h5 className="text-warning">ĐỘI NGŨ</h5>
+                            <p>Đội ngũ Gia sư của HTcon đầy đủ gồm: Sinh viên, Giáo viên, Cử nhân, người nước ngoài giàu kinh nghiệm.</p>
+                            </Col>
+                        </Row>
+                        <Row className="text-left">
+                            <Col md={6} className="p-3">
+                            <h5 className="text-danger">HỌC PHÍ</h5>
+                            <p>Học phí gia sư Tại nhà/Online 1 kèm 1 siêu ưu đãi chỉ từ 60k/h.</p>
+                            </Col>
+                            <Col md={6} className="p-3 ps-5">
+                            <h5 className="text-success">HỌC THỬ</h5>
+                            <p>Học thử 2 buổi để đánh giá chất lượng gia sư & mức độ phù hợp với học sinh.</p>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col md={1}></Col>
+                    <Col md={4}>
+                    <div className="my-3" style={{ backgroundImage: 'url(/image/gioithieu.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '400px' }}>
+                        <Button variant="primary" className="" style={{marginLeft: '-230px', padding: '10px 15px',fontWeight: '500', marginTop: '58px', backgroundColor: '#ff8B00', border: 'none'}}>TÌM GIA SƯ NGAY</Button>
+                    </div>
+                    </Col>
+                </Row>
+            </div>
+            
+            <div className="container my-4">
+                <h2 className="text-center mb-4">Tìm gia sư theo môn học</h2>
+                <SlideShowHome />
+            </div>
+
+            <div className="container my-4">
+                <h2 className="text-center my-5">Đội ngũ gia sư HTrang</h2>
+                <div className="row">
+                    <div className="col-md-6 pe-3 pt-3">
+                        <h3>Gia sư giáo viên</h3>
+                        <p style={{fontSize: '20px'}}>Là các thầy, cô giáo tốt nghiệp ĐH sư phạm, hiện đang công tác tại các trường học, trung tâm dạy học, 
+                            mở lớp tại nhà hoặc thầy cô dạy gia sư tự do…. Thầy cô với nhiều năm kinh nghiệm giảng dạy, áp dụng các phương pháp dạy học phù hợp với từng đối tượng học sinh, mang lại kết quả học tập tốt nhất.</p>
+                    </div>
+                    <div className="col-md-6">
+                        <img src="/image/giaovien.jpg" alt='giaovien' className="img-fluid ps-5 rounded-pill"/>
+                    </div>
+                </div>
+                <div className="row mt-5">
+                    <div className="col-md-6 ps-3">
+                        <img src="/image/sinhvien.jpg" alt='giaovien' className="img-fluid pe-5 rounded-pill"/>
+                    </div>
+                    <div className="col-md-6 ps-3 pt-3">
+                        <h3>Gia sư sinh viên</h3>
+                        <p style={{fontSize: '20px'}}>Gia sư tuyển chọn tại các trường TOP 1 ở Hà Nội với thành tích cao trong học tập, điểm thi đại học trên 8,5 điểm trở lên như ĐH Sư Phạm, ĐH Bách Khoa, ĐH Kinh Tế Quốc Dân, Ngoại Thương, ĐH Y Hà Nội, ĐH Quốc Gia Hà Nội…. Tùy vào vị trí khu vực sống của gia đình mà trung tâm sẽ giới thiệu các gia sư phù hợp, gần nhà để dạy lâu dài, ổn định.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <h3 className="text-center my-5">Danh sách gia sư nổi bật</h3>
+                <div className="row d-flex">
+                    {[...Array(4)].map((_, index) => (
+                    <CardTutor key={index} />
+                    ))}
+            </div>
+            <CommentTutor />
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-5">
+                        <img src="/image/gs.webp" className="w-90" alt="logo" />
+                    </div>
+                    <div className="col-md-7">
+                        <SignUp />
+                    </div>
+                </div>
+            </div>
+        </div>
         </>
     )
 }
-
 export default TrangChu

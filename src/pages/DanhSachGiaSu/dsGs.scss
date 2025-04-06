@@ -1,0 +1,57 @@
+// Global Styles
+.list-giasu {
+    margin-bottom: 50px;
+}
+
+// Card Component Styles
+.card-info {
+    margin-bottom: 20px;
+    display: flex;  
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+    .card-body {
+        flex-grow: 1; 
+    }
+
+    .card-text {
+        color: black;
+    }
+
+    .btn-custom {
+        background-color: #10B1ff;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+
+        &:hover {
+            background-color: #9cd7f4;
+        }
+    }
+}
+
+// Filter Select Styles
+.filter-select {
+    margin-bottom: 20px;
+}
+
+// Header Styles
+.headerDsGS {
+    margin-bottom: 20px;
+
+    h2 {
+        margin: 0;
+    }
+
+    span {
+        color: #6c757d;
+    }
+}
