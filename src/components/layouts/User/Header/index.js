@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../Header/header.scss";
+import "./header.scss";
 import './../../../pages/TrangChu/trangChu.scss';
 function Header() {
     return (
