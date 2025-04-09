@@ -1,9 +1,12 @@
-import LayoutDefault from "../components/layouts/LayoutDefault";
+import LayoutDefault from "../components/layouts/User/LayoutDefault";
 import DichVuGiaSu from "../pages/GiaSu";
 import Error404 from "../pages/Error404";
 import TrangChu from "../pages/TrangChu";
 import PhuHuynh from "../pages/PhuHuynh";
 import DanhSachGiaSu from "../pages/DanhSachGiaSu";
+import QuanLyGiaSu from "../pages/admin/QuanLyGiaSu";
+import LayoutAdmin from "../components/layouts/Admin/LayoutAdmin";
+import QuanLyNguoiDung from "../pages/admin/QuanLyNguoiDung";
 
 export const routes = [
     // user
@@ -35,5 +38,21 @@ export const routes = [
     {
         path: "giasu",
         element: <DichVuGiaSu />,
-    }
+    },
+
+    //admin
+    {
+      path: "/admin",
+      element: <LayoutAdmin />,
+      children: [
+        {
+          path: "quanlynguoidung",
+          element: <QuanLyNguoiDung />,
+        },
+        {
+          path: "quanlygiasu",
+          element: <QuanLyGiaSu />,
+        }
+      ],
+    },
   ];

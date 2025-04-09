@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./header.scss";
-import './../../../pages/TrangChu/trangChu.scss';
+import './../../../../pages/TrangChu/trangChu.scss';
 function Header() {
     return (
         <>
