@@ -7,6 +7,7 @@ import DanhSachGiaSu from "../pages/DanhSachGiaSu";
 import QuanLyGiaSu from "../pages/admin/QuanLyGiaSu";
 import LayoutAdmin from "../components/layouts/Admin/LayoutAdmin";
 import QuanLyNguoiDung from "../pages/admin/QuanLyNguoiDung";
+import QuanLyHocVien from "../pages/admin/QuanLyHocVien";
 
 export const routes = [
     // user
@@ -52,6 +53,10 @@ export const routes = [
         {
           path: "quanlygiasu",
           element: <QuanLyGiaSu />,
+        },
+        {
+          path: "quanlyhocvien",
+          element: <QuanLyHocVien />,
         }
       ],
     },
