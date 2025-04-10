@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../pages/TrangChu/trangChu.scss";
+import "../../pages/HomePage/home.scss";
 
 const SlideShowHome = () => {
   const imageList = [

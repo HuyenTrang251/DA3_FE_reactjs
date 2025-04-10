@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../QuanLyNguoiDung/quanlynguoidung.scss";
+import "../ManageUser/manage.scss";
 import { useEffect, useState } from "react";
 import {
   getAllTutors,
   createTutor,
   updateTutor,
   deleteTutor,
-} from "../../../services/quanlygiasuService"; 
+} from "../../../services/TutorService"; 
 
-const QuanLyGiaSu = () => {
+const ManageTutor = () => {
   const [tutors, setTutors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(5);
@@ -287,4 +287,4 @@ const QuanLyGiaSu = () => {
   );
 };
 
-export default QuanLyGiaSu;
+export default ManageTutor;

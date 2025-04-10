@@ -1,9 +1,9 @@
-import "../pages/TrangChu/trangChu.scss";
+import "../pages/HomePage/home.scss";
 function SignUp(){
     return(
-        <>
+    <>
         <section className="sectionSignUp">
-        <div className="container d-flex justify-content-center align-items-center">
+        <div className="containerSignUp d-flex justify-content-center align-items-center">
             <div className="card p-4" style={{ width: 800 }}>
             <h3 className="text-center mb-4" style={{color: '#ff8500'}}>ĐĂNG KÝ HỌC THỬ</h3>
             <form className="form-SignUp">
@@ -39,13 +39,13 @@ function SignUp(){
                     required=""
                 />
                 </div>
-                <button className="myDky w-100">Đăng ký học thử miễn phí</button>
+                <button className="btnDK w-100">Đăng ký học thử miễn phí</button>
             </form>
             
             </div>
         </div>
         </section>
-        </>
+    </>
     )
 }
 export default SignUp

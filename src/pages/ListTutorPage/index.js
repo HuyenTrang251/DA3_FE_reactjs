@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./dsGs.scss"
-function DanhSachGiaSu() {
+import "./listTutor.scss"
+function ListTutorPage() {
     const tutors = [
         {
             name: "Nguyễn Thị Bích Ngân",
@@ -123,4 +123,4 @@ function DanhSachGiaSu() {
         </div>
     );
 }
-export default DanhSachGiaSu
+export default ListTutorPage

@@ -1,5 +1,5 @@
 
-function PhuHuynh() {
+function Parents() {
     return(
         <>
             <h2>Phuhuynh ahihi</h2>
@@ -7,4 +7,4 @@ function PhuHuynh() {
     )
 }
 
-export default PhuHuynh
+export default Parents

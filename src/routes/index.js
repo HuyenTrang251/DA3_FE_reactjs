@@ -1,13 +1,15 @@
 import LayoutDefault from "../components/layouts/User/LayoutDefault";
-import DichVuGiaSu from "../pages/GiaSu";
+import DichVuGiaSu from "../pages/Tutor";
 import Error404 from "../pages/Error404";
-import TrangChu from "../pages/TrangChu";
-import PhuHuynh from "../pages/PhuHuynh";
-import DanhSachGiaSu from "../pages/DanhSachGiaSu";
-import QuanLyGiaSu from "../pages/admin/QuanLyGiaSu";
+import HomePage from "../pages/HomePage";
 import LayoutAdmin from "../components/layouts/Admin/LayoutAdmin";
-import QuanLyNguoiDung from "../pages/admin/QuanLyNguoiDung";
-import QuanLyHocVien from "../pages/admin/QuanLyHocVien";
+import ListTutorPage from "../pages/ListTutorPage";
+import LoginPage from "../pages/LoginPage";
+import SignupPage from "../pages/SignupPage";
+import ManageUser from "../pages/admin/ManageUser";
+import ManageTutor from "../pages/admin/ManageTutor";
+import ManageStudent from "../pages/admin/ManageStudent";
+import Parents from "../pages/Parents";
 
 export const routes = [
     // user
@@ -17,28 +19,35 @@ export const routes = [
       children: [
         {
           path: "/",
-          element: <TrangChu />,
+          element: <HomePage />,
         },
         {
-            path: "phuHuynh",
-            element: <PhuHuynh />,
+            path: "phu-huynh",
+            element: <Parents />,
         },
         {
           
-          path: "tim-gia-su",
-          element: <DanhSachGiaSu />,
+          path: "danh-sach-gia-su",
+          element: <ListTutorPage />,
         }
       ],
     },
     // error
     {
       path: "*",
-      element: <Error404 />,
+      element: <Error404 />
     },
-
     {
-        path: "giasu",
-        element: <DichVuGiaSu />,
+      path: "gia-su",
+      element: <DichVuGiaSu />
+    },
+    {
+      path: "dang-nhap",
+      element: <LoginPage />
+    },
+    {
+      path: "dang-ki",
+      element: <SignupPage />
     },
 
     //admin
@@ -47,16 +56,16 @@ export const routes = [
       element: <LayoutAdmin />,
       children: [
         {
-          path: "quanlynguoidung",
-          element: <QuanLyNguoiDung />,
+          path: "quan-ly-nguoi-dung",
+          element: <ManageUser />,
         },
         {
-          path: "quanlygiasu",
-          element: <QuanLyGiaSu />,
+          path: "quan-ly-gia-su",
+          element: <ManageTutor />,
         },
         {
-          path: "quanlyhocvien",
-          element: <QuanLyHocVien />,
+          path: "quan-ly-hoc-vien",
+          element: <ManageStudent />,
         }
       ],
     },

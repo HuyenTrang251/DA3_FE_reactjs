@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../QuanLyNguoiDung/quanlynguoidung.scss";
+import "../ManageUser/manage.scss";
 import { useEffect, useState } from "react";
 import {
   getAllStudents,
   createStudent,
   updateStudent,
   deleteStudent,
-} from "../../../services/quanlyhocvien";
+} from "../../../services/StudentService";
 
-const QuanLyHocVien = () => {
+const ManageStudent = () => {
   const [students, setStudents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(5);
@@ -224,4 +224,4 @@ const QuanLyHocVien = () => {
   );
 };
 
-export default QuanLyHocVien;
+export default ManageStudent;

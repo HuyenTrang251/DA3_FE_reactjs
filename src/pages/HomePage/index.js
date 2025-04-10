@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 import { Row, Col, Button } from 'react-bootstrap';
-import "../TrangChu/trangChu.scss"
+import "./home.scss"
 import SlideShowHome from "../../components/SlideShowHome";
 import CardTutor from "../../components/CardTutor";
 import CommentTutor from "../../components/CommentTutor";
 import SignUp from "../../components/SignUp";
 
-function TrangChu() {
+function HomePage() {
     return(
         <>
             <div className="header-content">
@@ -117,4 +117,4 @@ function TrangChu() {
         </>
     )
 }
-export default TrangChu
+export default HomePage

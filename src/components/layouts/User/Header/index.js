@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./header.scss";
-import './../../../../pages/TrangChu/trangChu.scss';
+import '../../../../pages/HomePage/home.scss';
 function Header() {
     return (
         <>
@@ -138,22 +138,22 @@ function Header() {
                             </li>
                             
                             <li className="nav-item">
-                                <Link className="nav-link" to="/tim-lop-day-kem">
+                                <Link className="nav-link" to="/danh-sach-lop-moi">
                                     Danh sách lớp mới
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/tim-gia-su">
+                                <Link className="nav-link" to="/danh-sach-gia-su">
                                     Danh sách Gia Sư
                                 </Link>
                             </li>
                             <li className="nav-item ps-5">
-                                <Link className="nav-link active" to="/giaSu">
+                                <Link className="nav-link active" to="/dang-ki">
                                     Đăng ký
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/dangNhap">
+                                <Link className="nav-link" to="/dang-nhap">
                                     Đăng nhập
                                 </Link>
                             </li>

@@ -1,5 +1,5 @@
 
-function GiaSu() {
+function Tutor() {
     return(
         <>
             <h2>giasu</h2>
@@ -7,4 +7,4 @@ function GiaSu() {
     )
 }
 
-export default GiaSu
+export default Tutor

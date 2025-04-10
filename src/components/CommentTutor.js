@@ -1,4 +1,4 @@
-import "../pages/TrangChu/trangChu.scss";
+import "../pages/HomePage/home.scss";
 
 function CommentTutor(){
     return(
