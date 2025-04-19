@@ -25,36 +25,36 @@ function HomePage() {
                 </Link>
             </div>
             <h3 className="text-center fs-2 text-dark my-5">Điểm khác biệt của gia sư HTrang</h3>
-            <div className="mainContent1">
+            <div className="mainContent1 mb-5">
                 <Row className="text-center py-3 border">
                     <Col md={7}>
                         <Row className="text-left">
                             <Col md={6} className="p-3">
-                            <h5 className="text-success">CHẤT LƯỢNG</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>CHẤT LƯỢNG</h5>
                             <p>Gia sư giỏi, kinh nghiệm từ các trường TOP đầu. HTcon cung cấp thông tin hồ sơ rõ ràng, minh bạch.</p>
                             </Col>
                             <Col md={6} className="p-3 ps-5">
-                            <h5 className="text-danger">NHANH CHÓNG</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>NHANH CHÓNG</h5>
                             <p>Chỉ 0-2 ngày để tìm gia sư giỏi phù hợp với đúng yêu cầu của gia đình.</p>
                             </Col>
                         </Row>
                         <Row className="text-left">
                             <Col md={6} className="p-3">
-                            <h5 className="text-info">MIỄN PHÍ</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>MIỄN PHÍ</h5>
                             <p>Miễn phí tư vấn, tìm và đối gia sư theo yêu cầu của Phụ huynh / Học sinh.</p>
                             </Col>
                             <Col md={6} className="p-3 ps-5">
-                            <h5 className="text-warning">ĐỘI NGŨ</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>ĐỘI NGŨ</h5>
                             <p>Đội ngũ Gia sư của HTcon đầy đủ gồm: Sinh viên, Giáo viên, Cử nhân, người nước ngoài giàu kinh nghiệm.</p>
                             </Col>
                         </Row>
                         <Row className="text-left">
                             <Col md={6} className="p-3">
-                            <h5 className="text-danger">HỌC PHÍ</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>HỌC PHÍ</h5>
                             <p>Học phí gia sư Tại nhà/Online 1 kèm 1 siêu ưu đãi chỉ từ 60k/h.</p>
                             </Col>
                             <Col md={6} className="p-3 ps-5">
-                            <h5 className="text-success">HỌC THỬ</h5>
+                            <h5 style={{color: '#056fa4', fontWeight: '550'}}>HỌC THỬ</h5>
                             <p>Học thử 2 buổi để đánh giá chất lượng gia sư & mức độ phù hợp với học sinh.</p>
                             </Col>
                         </Row>
@@ -69,12 +69,12 @@ function HomePage() {
             </div>
             
             <div className="container my-4">
-                <h2 className="text-center mb-4">Tìm gia sư theo môn học</h2>
+                <h2 className="text-center mb-5">Tìm gia sư theo môn học</h2>
                 <SlideShowHome />
             </div>
 
             <div className="container my-4">
-                <h2 className="text-center my-5">Đội ngũ gia sư HTrang</h2>
+                <h2 className="text-center my-4">Đội ngũ gia sư HTrang</h2>
                 <div className="row">
                     <div className="col-md-6 pe-3 pt-3">
                         <h3>Gia sư giáo viên</h3>
@@ -98,9 +98,8 @@ function HomePage() {
             <div className="container">
                 <h3 className="text-center my-5">Danh sách gia sư nổi bật</h3>
                 <div className="row d-flex">
-                    {[...Array(4)].map((_, index) => (
-                    <CardTutor key={index} />
-                    ))}
+                    <CardTutor />
+                </div>
             </div>
             <CommentTutor />
             <div className="container">
@@ -113,7 +112,6 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }

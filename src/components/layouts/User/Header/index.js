@@ -144,7 +144,7 @@ function Header() {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/danh-sach-gia-su">
-                                    Danh sách Gia Sư
+                                    Danh sách gia sư
                                 </Link>
                             </li>
                             <li className="nav-item ps-5">

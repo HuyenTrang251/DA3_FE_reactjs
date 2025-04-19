@@ -1,5 +1,5 @@
 import LayoutDefault from "../components/layouts/User/LayoutDefault";
-import DichVuGiaSu from "../pages/Tutor";
+import DichVuGiaSu from "../pages/user/Tutor_Math";
 import Error404 from "../pages/Error404";
 import HomePage from "../pages/HomePage";
 import LayoutAdmin from "../components/layouts/Admin/LayoutAdmin";
@@ -9,7 +9,11 @@ import SignupPage from "../pages/SignupPage";
 import ManageUser from "../pages/admin/ManageUser";
 import ManageTutor from "../pages/admin/ManageTutor";
 import ManageStudent from "../pages/admin/ManageStudent";
-import Parents from "../pages/Parents";
+import ListNewClassPage from "../pages/ListNewClassPage";
+// import Profile from "../pages/tutor/Profile";
+import LayoutTutor from "../components/layouts/Tutor/LayoutTutor";
+import LayoutStudent from "../components/layouts/Student/LayoutStudent";
+import ManagePost from "../pages/student/ManagePost";
 
 export const routes = [
     // user
@@ -22,8 +26,8 @@ export const routes = [
           element: <HomePage />,
         },
         {
-            path: "phu-huynh",
-            element: <Parents />,
+            path: "danh-sach-lop-moi",
+            element: <ListNewClassPage />,
         },
         {
           
@@ -69,4 +73,42 @@ export const routes = [
         }
       ],
     },
+
+    //tutor
+    {
+      path: "/tutor",
+      element: <LayoutTutor />,
+      children: [
+        // {
+        //   path: "thong-tin-ca-nhan",
+        //   element: <Profile />,
+        // },
+        // {
+        //   path: "quan-ly-lop",
+        //   element: <ManageClass />,
+        // },
+        // {
+        //   path: "quan-ly-phan-hoi",
+        //   element: <ManageResponse />,
+        // },
+        // {
+        //   path: "quan-ly-danh-gia",
+        //   element: <ManageCommen />,
+        // },
+      ],
+    },
+    {
+      path: "/student",
+      element: <LayoutStudent />,
+      children: [
+        // {
+        //   path: "thong-tin-ca-nhan",
+        //   element: <Profile />,
+        // },
+        {
+          path: "quan-ly-bai-dang",
+          element: <ManagePost />,
+        }
+      ]
+    }
   ];

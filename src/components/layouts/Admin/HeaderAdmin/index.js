@@ -3,38 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HeaderAdmin.scss";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 function HeaderAdmin({ toggleSidebar }) {
     const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
-    // const [userImg, setUserImg] = useState("/image/adminDefault.png");
-    // const taiKhoan = localStorage.getItem("taiKhoan");
-
-    // useEffect(() => {
-    //     const fetchUserData = async () => {
-    //     if (!taiKhoan) return;
-
-    //     try {
-    //         const users = await getAllUsers();
-    //         const user = users.find((u) => u.taiKhoan === taiKhoan);
-
-    //         if (user?.anhThe?.length > 0) {
-    //         setUserImg(`http://localhost:3001${user.anhThe[0]}`);
-    //         }
-    //     } catch (error) {
-    //         console.error(
-    //         "Lỗi khi lấy thông tin người dùng:",
-    //         error.response?.data || error.message
-    //         );
-    //     }
-    //     };
-
-    //     fetchUserData();
-    // }, [taiKhoan]);
 
     const handleLogout = () => {
-        // localStorage.removeItem("token");
-        // localStorage.removeItem("taiKhoan");
         navigate("/");
     };
     return (

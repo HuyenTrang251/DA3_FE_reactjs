@@ -65,7 +65,9 @@ const ManageStudent = () => {
       await updateStudent(selectedStudent.id_student, formData);
       setStudents((prev) =>
         prev.map((s) =>
-          s.id_student === selectedStudent.id_student ? { ...s, ...formData } : s
+          s.id_student === selectedStudent.id_student
+            ? { ...s, ...formData }
+            : s
         )
       );
       setModalOpen(false);
@@ -108,8 +110,8 @@ const ManageStudent = () => {
   return (
     <>
       <div className="container">
-        <h2 className="text-center mt-5">QUẢN LÝ HỌC VIÊN</h2>
-        <div className="d-flex justify-content-between align-items-center mb-3">
+        <h4 className="text-center mt-4">QUẢN LÝ HỌC VIÊN</h4>
+        <div className="d-flex justify-content-between align-items-center mb-2">
           <select
             className="form-select w-auto"
             value={recordsPerPage}
@@ -151,11 +153,23 @@ const ManageStudent = () => {
                 <td>{student.id_user}</td>
                 <td>{student.class}</td>
                 <td>{student.address}</td>
-                <td style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <button className="btn btn-warning me-2" onClick={() => handleEditClick(student)}>
+                <td
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button
+                    className="btn btn-warning me-2"
+                    onClick={() => handleEditClick(student)}
+                  >
                     <i className="bi bi-pencil-square"></i>
                   </button>
-                  <button className="btn btn-danger" onClick={() => handleDelete(student.id_student)}>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(student.id_student)}
+                  >
                     <i className="bi bi-trash"></i>
                   </button>
                 </td>
@@ -165,21 +179,35 @@ const ManageStudent = () => {
         </table>
 
         <nav>
-          <ul className="pagination pagination-container justify-content-center" style={{ color: "#10B1ff" }}>
+          <ul
+            className="pagination pagination-container justify-content-center"
+            style={{ color: "#10B1ff" }}
+          >
             <li className="page-item">
-              <button className="page-link" onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
+              <button
+                className="page-link"
+                onClick={() => changePage(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
                 Prev
               </button>
             </li>
             {numbers.map((n) => (
-              <li key={n} className={`page-item ${currentPage === n ? "active" : ""}`}>
+              <li
+                key={n}
+                className={`page-item ${currentPage === n ? "active" : ""}`}
+              >
                 <button className="page-link" onClick={() => changePage(n)}>
                   {n}
                 </button>
               </li>
             ))}
             <li className="page-item">
-              <button className="page-link" onClick={() => changePage(currentPage + 1)} disabled={currentPage === npage}>
+              <button
+                className="page-link"
+                onClick={() => changePage(currentPage + 1)}
+                disabled={currentPage === npage}
+              >
                 Next
               </button>
             </li>
@@ -188,31 +216,68 @@ const ManageStudent = () => {
       </div>
 
       {modalOpen && (
-        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">{selectedStudent ? "Cập nhật sinh viên" : "Thêm sinh viên"}</h5>
-                <button type="button" className="btn-close" onClick={() => setModalOpen(false)}></button>
+                <h5 className="modal-title">
+                  {selectedStudent ? "Cập nhật sinh viên" : "Thêm sinh viên"}
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setModalOpen(false)}
+                ></button>
               </div>
 
               <div className="modal-body">
                 <div className="mb-3">
-                  <input type="text" id="id_user" className="form-control" placeholder="ID User" value={formData.id_user} onChange={handleInputChange} />
+                  <input
+                    type="text"
+                    id="id_user"
+                    className="form-control"
+                    placeholder="ID User"
+                    value={formData.id_user}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="mb-3">
-                  <input type="text" id="class" className="form-control" placeholder="Lớp" value={formData.class} onChange={handleInputChange} />
+                  <input
+                    type="text"
+                    id="class"
+                    className="form-control"
+                    placeholder="Lớp"
+                    value={formData.class}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="mb-3">
-                  <input type="text" id="address" className="form-control" placeholder="Địa chỉ" value={formData.address} onChange={handleInputChange} />
+                  <input
+                    type="text"
+                    id="address"
+                    className="form-control"
+                    placeholder="Địa chỉ"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
 
               <div className="modal-footer">
-                <button className="btn btn-secondary" onClick={() => setModalOpen(false)}>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setModalOpen(false)}
+                >
                   Hủy
                 </button>
-                <button className="btn btn-primary" onClick={selectedStudent ? handleUpdate : handleSubmit}>
+                <button
+                  className="btn btn-primary"
+                  onClick={selectedStudent ? handleUpdate : handleSubmit}
+                >
                   {selectedStudent ? "Cập nhật" : "Thêm"}
                 </button>
               </div>

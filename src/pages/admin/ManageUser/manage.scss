@@ -1,44 +1,43 @@
- 
-  .btn-add {
-    background: #10B1ff;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-  
-    &:hover {
-      background: #cab4bb;
-      color: black;
-    }
-  }
 
-  //Phân trang
-  .pagination-container .page-link {
+.btn-add {
+  background: #10B1ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+
+  &:hover {
+    background: #cab4bb;
     color: black;
-    border-color: #333;
   }
-  
-  /* Hover */
-  .pagination-container .page-link:hover {
-    background-color: #f1f8fb;
-    color: #10B1ff;
-  }
-  
-  /* Nút active */
-  .pagination-container .page-item.active .page-link {
-    background-color: #10B1ff;
-    border-color: #10B1ff;
-    color: white;
-  }
-  
-  /* Nút disabled */
-  .pagination-container .page-item.disabled .page-link {
-    color: #ccc;
-    border-color: #ccc;
-    background-color: #f8f9fa;
-  }
-  
+}
+
+//Phân trang
+.pagination-container .page-link {
+  color: black;
+  border-color: #333;
+}
+
+/* Hover */
+.pagination-container .page-link:hover {
+  background-color: #f1f8fb;
+  color: #10B1ff;
+}
+
+/* Nút active */
+.pagination-container .page-item.active .page-link {
+  background-color: #10B1ff;
+  border-color: #10B1ff;
+  color: white;
+}
+
+/* Nút disabled */
+.pagination-container .page-item.disabled .page-link {
+  color: #ccc;
+  border-color: #ccc;
+  background-color: #f8f9fa;
+}

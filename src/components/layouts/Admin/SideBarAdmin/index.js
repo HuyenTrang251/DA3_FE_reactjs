@@ -14,37 +14,37 @@ function SidebarAdmin({ isOpen }) {
         {
         icon: "bi bi-person-circle",
         label: "Quản lý người dùng",
-        path: "/admin/quanlynguoidung",
+        path: "/admin/quan-ly-nguoi-dung",
         },
         {
         icon: "bi bi-person-vcard",
         label: "Quản lý gia sư",
-        path: "/admin/quanlygiasu",
+        path: "/admin/quan-ly-gia-su",
         },
         {
         icon: "bi bi-person-square",
         label: "Quản lý học viên",
-        path: "/admin/quanlyhocvien",
+        path: "/admin/quan-ly-hoc-vien",
         },
         {
-        icon: "bi bi-file-earmark-post",
+        icon: "bi bi-card-heading",
         label: "Quản lý bài đăng",
-        path: "/admin/quanlybaidang",
+        path: "/admin/quan-ly-bai-dang",
         },
         {
         icon: "bi bi-file-earmark-check-fill",
         label: "Quản lý đặt lịch",
-        path: "/admin/quanlydatlich",
+        path: "/admin/quan-ly-dat-lich",
         },
         {
         icon: "bi bi-chat-right-quote-fill",
         label: "Quản lý phản hồi",
-        path: "/admin/quanlyphanhoi",
+        path: "/admin/quan-ly-phan-hoi",
         },
         {
-        icon: "bi bi-twitch",
+        icon: "bi bi-chat-square-quote-fill",
         label: "Quản lý đánh giá",
-        path: "/admin/quanlydanhgia",
+        path: "/admin/quan-ly-danh-gia",
         },
         {
         icon: "bi bi-bar-chart-line-fill",

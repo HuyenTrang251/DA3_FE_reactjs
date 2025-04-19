@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./manage.scss";
 import { useEffect, useState } from "react";
 import {
-  createUser,
+  createUserWithImg,
   deleteUser,
   getAllUsers,
   updateUser,
@@ -43,19 +43,24 @@ const ManageUser = () => {
       }
     };
     fetchUsers();
-  }, [recordsPerPage]); // Refetch users when recordsPerPage changes
+  }, [recordsPerPage]); //call lại api khi recordsPerPage thay đổi
 
   const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
+    const { id, value, files } = e.target;
+    if (id === "img" && files) {
+      setFormData((prev) => ({ ...prev, img: files[0] }));
+    } else {
+      setFormData((prev) => ({ ...prev, [id]: value }));
+    }
   };
 
   const handleSubmit = async () => {
     try {
-      const data = await createUser(formData);
+      const formDataToSend = new FormData();
+      for (const key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
+      const data = await createUserWithImg(formDataToSend);
       setUsers((prev) => [...prev, data]);
       setModalOpen(false);
     } catch (error) {
@@ -66,7 +71,12 @@ const ManageUser = () => {
   const handleUpdate = async () => {
     if (!selectedUser) return;
     try {
-      await updateUser({ ...formData, id_user: selectedUser.id_user });
+      const formDataToSend = new FormData();
+      for (const key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
+      formDataToSend.append("id_user", selectedUser.id_user);
+      await updateUser(formDataToSend);
       setUsers((prev) =>
         prev.map((u) =>
           u.id_user === selectedUser.id_user ? { ...u, ...formData } : u
@@ -103,11 +113,11 @@ const ManageUser = () => {
   const resetFormData = () => {
     setFormData({
       img: "",
-    full_name: "",
-    email: "",
-    phone: "",
-    password: "",
-    role: "học viên",
+      full_name: "",
+      email: "",
+      phone: "",
+      password: "",
+      role: "học viên",
     });
   };
 
@@ -158,24 +168,42 @@ const ManageUser = () => {
           </thead>
           <tbody>
             {currentRecords.map((user) => (
-              <tr key={user.id_user}>
-                <td>{user.id_user}</td>
-                <td>
-                  <img src={user.img} alt="" width="50" />
+              <tr key={user.id_user} style={{ height: "50px" }}>
+                <td className="item-row">{user.id_user}</td>
+                <td className="item-row">
+                  {user.img ? (
+                    <img
+                      src={`http://localhost:3300/uploads/${user.img}`}
+                      alt="anh"
+                      style={{
+                        width: "35px",
+                        height: "45px",
+                        objectFit: "contain",
+                      }}
+                    />
+                  ) : ('')}
                 </td>
                 <td>{user.full_name}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.role}</td>
-                <td style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <td
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <button
                     className="btn btn-warning me-2"
+                    style={{fontSize: '15px'}}
                     onClick={() => handleEditClick(user)}
                   >
                     <i className="bi bi-pencil-square"></i>
                   </button>
                   <button
                     className="btn btn-danger"
+                    style={{ fontSize: "15px" }}
                     onClick={() => handleDelete(user.id_user)}
                   >
                     <i className="bi bi-trash"></i>
@@ -243,7 +271,7 @@ const ManageUser = () => {
               </div>
 
               <div className="modal-body">
-                {/* <div className="mb-3">
+                <div className="mb-3">
                   <input
                     type="file"
                     id="img"
@@ -252,23 +280,20 @@ const ManageUser = () => {
                     onChange={(e) => {
                       const file = e.target.files[0];
                       if (file) {
-                          const reader = new FileReader();
-                          reader.onloadend = () => {
-                            setFormData((prev) => ({ ...prev, img: reader.result }));
-                          };
-                          reader.readAsDataURL(file);
+                        setFormData((prev) => ({ ...prev, img: file })); // Lưu trữ tệp ảnh, không phải base64
                       }
                     }}
                   />
-                  {formData.img && (
-                    <img
-                      src={formData.img}
-                      alt="Preview"
-                      style={{ maxWidth: "100px", marginTop: "10px" }}
-                    />
-                  )}
-                </div> */}
-                <div className="mb-3">
+                  {formData.img &&
+                    typeof formData.img !== "string" && ( // Kiểm tra nếu formData.img là một File object
+                      <img
+                        src={URL.createObjectURL(formData.img)} // Tạo URL tạm thời từ tệp ảnh
+                        alt="Preview"
+                        style={{ maxWidth: "100px", marginTop: "10px" }}
+                      />
+                    )}
+                </div>
+                 <div className="mb-3">
                   <input
                     type="text"
                     id="img"
@@ -277,7 +302,7 @@ const ManageUser = () => {
                     value={formData.img}
                     onChange={handleInputChange}
                   />
-                </div>
+                </div> 
                 <div className="mb-3">
                   <input
                     type="text"
@@ -349,110 +374,7 @@ const ManageUser = () => {
             </div>
           </div>
         </div>
-      )}
-
-      {/* {modalOpen && (
-        <div
-          className="modal fade show d-block"
-          tabIndex="-1"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-        >
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">
-                  {selectedUser ? "Cập nhật người dùng" : "Thêm người dùng"}
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setModalOpen(false)}
-                ></button>
-              </div>
-
-              <div className="modal-body">
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    id="img"
-                    className="form-control"
-                    placeholder="Link ảnh đại diện"
-                    value={formData.img}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    id="full_name"
-                    className="form-control"
-                    placeholder="Họ tên"
-                    value={formData.full_name}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="email"
-                    id="email"
-                    className="form-control"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    id="phone"
-                    className="form-control"
-                    placeholder="Số điện thoại"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="password"
-                    id="password"
-                    className="form-control"
-                    placeholder="Mật khẩu"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <select
-                    id="role"
-                    className="form-select"
-                    value={formData.role}
-                    onChange={handleInputChange}
-                  >
-                    <option value="gia sư">Gia sư</option>
-                    <option value="học viên">Học viên</option>
-                    <option value="admin">Admin</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="modal-footer">
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setModalOpen(false)}
-                >
-                  Hủy
-                </button>
-                <button
-                  className="btn btn-primary"
-                  onClick={selectedUser ? handleUpdate : handleSubmit}
-                >
-                  {selectedUser ? "Cập nhật" : "Thêm"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
+      )};
     </>
   );
 };

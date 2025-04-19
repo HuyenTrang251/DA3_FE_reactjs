@@ -46,7 +46,7 @@ const ManageTutor = () => {
       }
     };
     fetchTutors();
-  }, [recordsPerPage]); // Refetch users when recordsPerPage changes
+  }, [recordsPerPage]); 
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -129,8 +129,8 @@ const ManageTutor = () => {
   return (
     <>
       <div className="container">
-        <h2 className="text-center mt-5">QUẢN LÝ GIA SƯ</h2>
-        <div className="d-flex justify-content-between align-items-center mb-3">
+        <h4 className="text-center mt-4">QUẢN LÝ GIA SƯ</h4>
+        <div className="d-flex justify-content-between align-items-center mb-2">
           <select
             className="form-select w-auto"
             value={recordsPerPage}

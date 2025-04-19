@@ -60,7 +60,7 @@ function CommentTutor(){
                 </div>
                 <div className="row"> 
                     <p>
-                    "Gia sư dạy rất tận tâm, dễ hiểu, em thấy thích thú với việc học hơn khi được học cùng gia sư HTrang""Tôi rất hài lòng với cách làm việc chỉnh chu, nhiệt tình của gia sư HTrang, nhờ website này tôi đã tìm được gia sư chất lượng cho bé nhà tôi, kết quả học tập cải thiện rõ và con chủ động tự giác học tập hơn."
+                    "Tôi rất hài lòng với cách làm việc chỉnh chu, nhiệt tình của gia sư HTrang, nhờ website này tôi đã tìm được gia sư chất lượng cho bé nhà tôi, kết quả học tập cải thiện rõ và con chủ động tự giác học tập hơn."
                     </p>
                 </div>
             </div>

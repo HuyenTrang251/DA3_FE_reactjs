@@ -1,5 +1,5 @@
 
-function Tutor() {
+function Tutor_Math() {
     return(
         <>
             <h2>giasu</h2>
@@ -7,4 +7,4 @@ function Tutor() {
     )
 }
 
-export default Tutor
+export default Tutor_Math
