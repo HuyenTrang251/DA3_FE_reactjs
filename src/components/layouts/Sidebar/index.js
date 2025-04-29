@@ -3,15 +3,35 @@ import { NavLink, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./sidebar.scss";
+import { getUserLogined } from "../../../services/UserService";
+
 function Sidebar({ isOpen, menuItems }) {
     const location = useLocation();
     const [activePath, setActivePath] = useState(location.pathname);
-    const userImage = localStorage.getItem("img");
-    const userName = localStorage.getItem("name");
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         setActivePath(location.pathname);
     }, [location]);
+
+    useEffect(() => {
+        const FetchUserData = async () =>{
+            const data = await getUserLogined();
+            if (data) {
+                setUserData({
+                    img: data.img,          
+                    name: data.name,       
+                });
+            } else {
+                setUserData({ img: '', name: 'User' });
+            }
+        };
+        FetchUserData();
+    }, []);
+
+    const userImage = userData?.img;
+    const userName = userData?.name;
+
     return(
         <>
         <nav className={`sidebar ${isOpen ? "open" : "closed"}`}>

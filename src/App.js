@@ -1,9 +1,12 @@
 import Routers from "./components/Routers";
+import { HideAuthProvider } from "./contexts/HideAuthContext";
 
 function App() {
   return (
     <>
-      <Routers />
+      <HideAuthProvider>
+          <Routers />
+      </HideAuthProvider>
     </>
   );
 }

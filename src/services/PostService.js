@@ -30,6 +30,16 @@ export const updatePost = async (id, data) => {
   return response.data;
 };
 
+export const getStudentId = async (id) => {
+  const response = await request.get(`students/getID/${id}`); 
+  return response.data;
+};
+
+export const updateStatusResponse = async (id, data) => {
+  const response = await request.put(`responses/status/${id}`, data); 
+  return response.data;
+};
+
 export const deletePost = async (id) => {
   const response = await request.delete(`posts/${id}`); 
   return response.data;

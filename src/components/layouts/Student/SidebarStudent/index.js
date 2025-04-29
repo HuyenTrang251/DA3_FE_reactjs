@@ -1,6 +1,16 @@
 export const SidebarStudent = [
     {
     icon: "bi bi-stack",
+    label: "Danh sách gia sư",
+    path: "/danh-sach-gia-su",
+    },
+    {
+    icon: "bi bi-stack",
+    label: "Thông tin phản hồi",
+    path: "/student/thong-tin-phan-hoi",
+    },
+    {
+    icon: "bi bi-stack",
     label: "Quản lý lớp",
     path: "/student/quan-ly-lop",
     },

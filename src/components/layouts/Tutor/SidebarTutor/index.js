@@ -1,6 +1,16 @@
 export const SidebarTutor = [
     {
     icon: "bi bi-stack",
+    label: "Danh sách lớp mới",
+    path: "/danh-sach-lop-moi",
+    },
+    {
+    icon: "bi bi-stack",
+    label: "Thông tin đặt lịch",
+    path: "/tutor/thong-tin-dat-lich",
+    },
+    {
+    icon: "bi bi-stack",
     label: "Quản lý lớp",
     path: "/tutor/quan-ly-lop",
     },

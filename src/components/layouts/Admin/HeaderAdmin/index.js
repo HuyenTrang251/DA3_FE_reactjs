@@ -1,16 +1,38 @@
 import { Link, useNavigate } from "react-router-dom";
+import {useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HeaderAdmin.scss";
-import {useState } from "react";
+import { getUserLogined } from "../../../../services/UserService";
+
 function HeaderAdmin({ toggleSidebar }) {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [userData, setUserData] = useState([null]);
     const navigate = useNavigate();
+    // const img = localStorage.getItem("img");
 
     const handleLogout = () => {
-        navigate("/");
+        navigate("/dang-nhap");
     };
+
+    useEffect(() => {
+        const FetchUserData = async () =>{
+            const data = await getUserLogined();
+            if (data) {
+                setUserData({
+                    img: data.img,          
+                    name: data.name,       
+                });
+            } else {
+                setUserData({ img: '', name: 'User' });
+            }
+        };
+        FetchUserData();
+    }, []);
+
+    const userImage = userData?.img;
+
     return (
         <>
         <div className="header-admin">
@@ -33,16 +55,16 @@ function HeaderAdmin({ toggleSidebar }) {
         </div>
 
         <div className="header-right">
-            <Link className="nav-link" to="/theme">
+            {/* <Link className="nav-link" to="/theme">
             <i className="bi bi-palette"></i>
             </Link>
             <Link
             className="nav-link"
-            to="https://github.com/Ahhinhlll"
+            to="https://github.com/HuyenTrang251"
             target="_blank"
             >
             <i className="bi bi-github"></i>
-            </Link>
+            </Link> */}
 
             {/* Dropdown Avatar */}
             <div className="user-dropdown">
@@ -50,7 +72,7 @@ function HeaderAdmin({ toggleSidebar }) {
                 className="avatar-btn"
                 onClick={() => setShowDropdown(!showDropdown)}
             >
-                <img src='/image/gs.jpg' alt="Avatar" />
+                <img src={`http://localhost:3300/uploads/${userImage}`} alt="Avatar" />
                 <i className="bi bi-caret-down-fill dropdown-icon ms-1"></i>
             </button>
 

@@ -159,7 +159,7 @@ function ListTutorPage() {
                 {tutors.map((tutor) => (
                     <div key={tutor.id_tutor} className="col-md-3 col-sm-6 col-12 mb-4">
                     <div className="card">
-                        <img className="card-img-top" style={{maxHeight: '250px', objectFit: 'contain'}} src={tutor.img ? `http://localhost:3300/uploads/${tutor.img}` : "/image/avatar.jpg"} alt={tutor.full_name} />
+                        <img className="card-img-top" style={{maxHeight: '300px', objectFit: 'over'}} src={tutor.img ? `http://localhost:3300/uploads/${tutor.img}` : "/image/avatar.jpg"} alt={tutor.full_name} />
                         <div className="card-body">
                         <h4 className="card-title">{tutor.full_name}</h4>
                         <p className="card-text">{tutor.address || "Chưa cập nhật"} | {tutor.subjects_list || "Chưa cập nhật"}</p> 

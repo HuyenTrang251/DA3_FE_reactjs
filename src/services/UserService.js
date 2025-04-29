@@ -37,3 +37,8 @@ export const deleteUser = async (id) => {
     const response = await request.delete(`users/${id}`);
     return response.data;
 };
+
+export const getUserLogined = async () => {
+    const response = await request.get(`users/me/`);
+    return response.data;
+};

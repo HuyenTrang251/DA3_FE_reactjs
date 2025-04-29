@@ -374,7 +374,7 @@ const ManageUser = () => {
             </div>
           </div>
         </div>
-      )};
+      )}
     </>
   );
 };

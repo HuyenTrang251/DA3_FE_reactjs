@@ -39,17 +39,26 @@
 // }
 // export default LayoutTutor
 
+import { useHideAuth } from "../../../../contexts/HideAuthContext";
+import { useEffect } from "react";
 import HeaderAdmin from "../../Admin/HeaderAdmin";
-import {SidebarTutor} from "../SidebarTutor"; 
-import LayoutUser from './../../LayoutUser/index';
+import { SidebarTutor } from "../SidebarTutor";
+import LayoutUser from "./../../LayoutUser/index";
+import { useLocation } from "react-router-dom";
 
 function LayoutTutor() {
-  return (
-    <LayoutUser
-      HeaderRole={HeaderAdmin}
-      SidebarRole={SidebarTutor}
-    />
-  );
+  const { setHideAuth } = useHideAuth();
+  const location = useLocation();
+  useEffect(() => {
+    setHideAuth(true);
+      // return () => {
+      //   setHideAuth(false); 
+      // };
+    sessionStorage.setItem('previousPage', location.pathname)
+  }, [setHideAuth, location.pathname]);
+  return <
+  LayoutUser HeaderRole={HeaderAdmin} 
+  SidebarRole={SidebarTutor} />;
 }
 
 export default LayoutTutor;

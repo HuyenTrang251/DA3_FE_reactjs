@@ -26,11 +26,10 @@ export const routes = [
           element: <HomePage />,
         },
         {
-            path: "danh-sach-lop-moi",
-            element: <ListNewClassPage />,
+          path: "danh-sach-lop-moi",
+          element: <ListNewClassPage />
         },
         {
-          
           path: "danh-sach-gia-su",
           element: <ListTutorPage />,
         }
@@ -52,6 +51,14 @@ export const routes = [
     {
       path: "dang-ki",
       element: <SignupPage />
+    },
+    {
+      path: "danh-sach-gia-su",
+      element: <ListTutorPage />,
+    },
+    {
+      path: "danh-sach-lop-moi",
+      element: <ListNewClassPage />,
     },
 
     //admin
@@ -79,6 +86,7 @@ export const routes = [
       path: "/tutor",
       element: <LayoutTutor />,
       children: [
+        
         // {
         //   path: "thong-tin-ca-nhan",
         //   element: <Profile />,
@@ -101,13 +109,10 @@ export const routes = [
       path: "/student",
       element: <LayoutStudent />,
       children: [
-        // {
-        //   path: "thong-tin-ca-nhan",
-        //   element: <Profile />,
-        // },
+        
         {
           path: "quan-ly-bai-dang",
-          element: <ManagePost />,
+          element: <ManagePost />
         }
       ]
     }

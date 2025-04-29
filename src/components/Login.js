@@ -43,9 +43,9 @@ function Login() {
         httpOnly: false,
       });
       console.log(data.userdata);
-      localStorage.setItem("id", data.userdata.id);
-      localStorage.setItem("img", data.userdata.img);
-      localStorage.setItem("name", data.userdata.name);
+      // localStorage.setItem("id", data.userdata.id);
+      // localStorage.setItem("img", data.userdata.img);
+      // localStorage.setItem("name", data.userdata.name);
 
       const role = data.userdata.role;
       if (role === "gia sư") {
