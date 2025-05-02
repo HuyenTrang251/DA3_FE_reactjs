@@ -41,3 +41,58 @@
   border-color: #ccc;
   background-color: #f8f9fa;
 }
+
+
+// quản lý bài đăng - ADMIN
+.table-posts {
+  overflow-x: auto;
+}
+
+.table-bordered tr {
+  max-height: 90px; 
+}
+
+/* Đảm bảo các ô trong bảng không vượt quá chiều cao */
+.table-bordered th{
+  vertical-align: middle; 
+  white-space: normal;
+  max-width: 120px; 
+  
+}
+
+.table-bordered td {
+  vertical-align: middle;     
+  padding: 8px; 
+  white-space: nowrap;       
+  overflow: hidden;           
+  text-overflow: ellipsis; 
+  max-width: 120px; 
+}
+
+/* Hiển thị toàn bộ nội dung khi hover */
+.table-bordered td:hover {
+  white-space: normal; 
+  overflow: visible; 
+  // position: relative; 
+  // z-index: 1;     /* Đảm bảo nội dung hover hiển thị trên các phần tử khác */
+  background-color: #d3d4d5; 
+  cursor: pointer;
+}
+
+.table-bordered td.email-column,
+.table-bordered td.notes-column,
+.table-bordered td.address-column {
+  max-width: 200px; 
+}
+
+/* Modal phản hồi */
+.modal-content .table td {
+  white-space: normal; 
+}
+
+/* Đảm bảo các nút trong cột thao tác và phản hồi không bị ảnh hưởng */
+.table-bordered td.action-column,
+.table-bordered td.response-column {
+  max-width: none; 
+  white-space: nowrap; 
+}

@@ -20,6 +20,11 @@ export const updateTutor = async (id, data) => {
   return response.data;
 };
 
+export const updateTutorStatus = async (id, data) => {
+  const response = await request.put(`tutors/status/${id}`, data);
+  return response.data;
+};
+
 export const deleteTutor = async (id) => {
   const response = await request.delete(`tutors/${id}`);
   return response.data;

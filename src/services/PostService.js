@@ -15,6 +15,11 @@ export const getPostByUserId = async (id) => {
   return response.data;
 };
 
+export const getAllPostsWithResponse = async () => {
+  const response = await request.get("posts/getAllWithResponse"); 
+  return response.data;
+};
+
 export const getPostById = async (id) => {
   const response = await request.get(`posts/${id}`); 
   return response.data;
@@ -27,6 +32,11 @@ export const createPost = async (data) => {
 
 export const updatePost = async (id, data) => {
   const response = await request.put(`posts/${id}`, data); 
+  return response.data;
+};
+
+export const updateStatusPost = async (id, data) => {
+  const response = await request.put(`posts/status/${id}`, data); 
   return response.data;
 };
 

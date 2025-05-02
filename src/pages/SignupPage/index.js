@@ -29,7 +29,6 @@ function SignupPage() {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
 
-    // Basic validation
     if (!formData.full_name.trim()) {
       setError("Họ tên không được để trống.");
       return;

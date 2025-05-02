@@ -5,6 +5,11 @@ export const getAllStudents = async () => {
   return response.data;
 };
 
+export const getAllForAdminPost = async () => {
+  const response = await request.get("students/getAllForAdminPost");
+  return response.data;
+};
+
 export const getStudentById = async (id) => {
   const response = await request.get(`students/${id}`);
   return response.data;

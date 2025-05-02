@@ -25,6 +25,7 @@ const ManageUser = () => {
     role: "học viên",
   });
 
+  const [error, setError] = useState("");
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = users.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -55,6 +56,35 @@ const ManageUser = () => {
   };
 
   const handleSubmit = async () => {
+    if (!formData.full_name.trim()) {
+      setError("Họ tên không được để trống.");
+      return;
+    }
+    if (!formData.email.trim()) {
+      setError("Email không được để trống.");
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setError("Email không hợp lệ.");
+      return;
+    }
+    if (!formData.phone.trim()) {
+      setError("Số điện thoại không được để trống.");
+      return;
+    }
+    // if (!/^\d{10}$/.test(formData.phone)) {
+    //     setError("Số điện thoại không hợp lệ.");
+    //     return;
+    // }
+    if (!formData.password.trim()) {
+      setError("Mật khẩu không được để trống.");
+      return;
+    }
+    if (formData.password.length < 6) {
+      setError("Mật khẩu phải có ít nhất 6 ký tự.");
+      return;
+    }
+    
     try {
       const formDataToSend = new FormData();
       for (const key in formData) {
@@ -356,7 +386,7 @@ const ManageUser = () => {
                   </select>
                 </div>
               </div>
-
+              {error && <p className="text-danger text-center">{error}</p>}
               <div className="modal-footer">
                 <button
                   className="btn btn-secondary"

@@ -14,6 +14,7 @@ import ListNewClassPage from "../pages/ListNewClassPage";
 import LayoutTutor from "../components/layouts/Tutor/LayoutTutor";
 import LayoutStudent from "../components/layouts/Student/LayoutStudent";
 import ManagePost from "../pages/student/ManagePost";
+import ManagePosts from "../pages/admin/ManagePosts";
 
 export const routes = [
     // user
@@ -77,6 +78,10 @@ export const routes = [
         {
           path: "quan-ly-hoc-vien",
           element: <ManageStudent />,
+        },
+        {
+          path: "quan-ly-bai-dang",
+          element: <ManagePosts />,
         }
       ],
     },
